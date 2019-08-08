@@ -3,10 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './component/shared/header/header.component';
+
 
 @NgModule({
+
+  //we must declare here all new components after we imported them!!!
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+
   ],
   imports: [
     BrowserModule,
