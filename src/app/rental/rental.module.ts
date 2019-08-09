@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 // For Ng Directive
 import { CommonModule } from '@angular/common';
 
+// Service
+import { RentalService } from './shared/rental.service';
 
 import { RentalComponent } from '../rental/rental.component';
 import { RentalListComponent } from '../rental/rental-list/rental-list.component';
 import { RentalListItemComponent } from '../rental/rental-list-item/rental-list-item.component';
+
 
 
 //NgModule is a Decoretor with decorations fields
@@ -16,6 +19,7 @@ import { RentalListItemComponent } from '../rental/rental-list-item/rental-list-
     RentalListComponent,
     RentalListItemComponent
   ],
-  imports: [CommonModule]
+  imports: [CommonModule],
+  providers: [RentalService]
 })
 export class RentalModule { }
