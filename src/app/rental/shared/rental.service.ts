@@ -83,7 +83,8 @@ export class RentalService {
   public getRentals(): Observable<Rental[]> {
     //Instance of Observable and passing an anonimus function stand for arrow function
     //const rentalObservable = new Observable((observe) => {
-    const rentalObservable: Observable<Rental[]> = new Observable((observe) => {
+    // const rentalObservable: Observable<Rental[]> = new Observable((observe) => {
+    return new Observable<Rental[]>((observe) => {
       //emitting some data simulate our server call, by calling some asynchronously function like setTimeout
       setTimeout(() => {
         observe.next(this.rentals);
@@ -99,6 +100,6 @@ export class RentalService {
     })
 
     // return this.rentals;
-    return rentalObservable;
+    // return rentalObservable;
   }
 }
