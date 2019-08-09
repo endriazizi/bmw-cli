@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
+
 
 @Injectable()
 
@@ -59,7 +61,29 @@ export class RentalService {
     }];
   // Private means that only our service will have access to property or function.
   // Public means that any class can reference property or function
-  public getRentals(): any[] {
-    return this.rentals;
+  // public getRentals(): any[] {
+  public getRentals(): any {
+    debugger;
+    //Instance of Observable and passing an anonimus function stand for arrow function
+    const rentalObservable = new Observable((observe) => {
+      //emitting some data simulate our server call, by calling some asynchronously function like setTimeout
+      setTimeout(() => {
+        observe.next(this.rentals);
+        debugger;
+      }, 1000); // after 1 seconds emitt our data
+
+      setTimeout(() => {
+        observe.error('I am an error!!!');
+        debugger;
+      }, 2000); // after 2 seconds emitt an error message
+
+      setTimeout(() => {
+        observe.complete();
+        debugger;
+      }, 3000); // after 3 seconds emitt complete method
+    })
+    debugger;
+    // return this.rentals;
+    return rentalObservable;
   }
 }

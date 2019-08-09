@@ -19,7 +19,21 @@ export class RentalListComponent implements OnInit {
 
   //ngOnInit is a Life Cycle method, checkout Angular Documentation
   ngOnInit() {
-    this.rentals = this.rentalService.getRentals();
+    // this.rentals = this.rentalService.getRentals();
+    debugger;
+    const rentalObservable = this.rentalService.getRentals();
+    debugger;
+    rentalObservable.subscribe(
+      // two function
+      (rentals) => { this.rentals = rentals; }, //our data is rentals
+      (err) => {
+        debugger;
+      },
+      () => {
+        debugger;
+      }
+    );
+
   }
 
 }
