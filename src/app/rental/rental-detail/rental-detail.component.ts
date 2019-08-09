@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 // Get access to current Route
+import { ActivatedRoute } from '@angular/router';
+import { Rental } from '../shared/rental.mode';
+import { RentalService } from '../shared/rental.service';
+
+
+
 
 
 @Component({
@@ -10,18 +15,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RentalDetailComponent implements OnInit {
 
-  currentId: string;
+  // currentId: string;
+  myRental: Rental;
+
   // Inject ActivatedRoute to our cunstructor
-  constructor(private route: ActivatedRoute) { }
+  // Inject Rental Service to our cunstructor
+  constructor(private route: ActivatedRoute,
+    private rentalService: RentalService) { }
 
   ngOnInit() {
-
     this.route.params.subscribe(
       (params) => {
         console.log('rental-detail.component params: ', params)
-        this.currentId = params['rentalId'];
-
+        // getting rentalId from URL
+        // this.currentId = params['rentalId'];
+        this.getRental(params['rentalId'])
       })
+  }
+
+  getRental(rentalId: string) {
+    this.rentalService.getRentalById(rentalId).subscribe(
+      (rental: Rental) => {
+        this.myRental = rental;
+      }
+    )
   }
 
 }
