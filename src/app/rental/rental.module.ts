@@ -13,7 +13,7 @@ import { RentalListItemComponent } from '../rental/rental-list-item/rental-list-
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 
 
-// RentalComponent is a container that will display its childrens component
+// RentalComponent is a container that will display its children component
 const routes: Routes = [
   {
     path: 'rentals', component: RentalComponent,
