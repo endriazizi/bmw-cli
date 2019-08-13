@@ -9,6 +9,16 @@ const rentalRoutes = require('./routes/rentals')
 
 const app = express();
 
+
+// --------------------------------------------------------
+// CORS
+// --------------------------------------------------------
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use('/api/v1/rentals', rentalRoutes);
 
 //require('dotenv').config();
@@ -42,11 +52,11 @@ mongoose.connect(config.DB_URI, {
 // Routes
 // --------------------------------------------------------
 
-app.get('/rentals', (req, res) => {
+/* app.get('/rentals', (req, res) => {
   res.json({
     "success": true
   });
-});
+}); */
 
 const PORT = process.env.PORT || 3001;
 

@@ -1,6 +1,6 @@
 export class Rental {
   // our data structure
-  id: string;
+  _id: string;
   title: string;
   city: string;
   street: string;

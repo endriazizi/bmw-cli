@@ -11,6 +11,12 @@ import { RentalComponent } from '../rental/rental.component';
 import { RentalListComponent } from '../rental/rental-list/rental-list.component';
 import { RentalListItemComponent } from '../rental/rental-list-item/rental-list-item.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+
+//Pipe
+import { NgPipesModule } from 'ngx-pipes';
+import { UppercasePipe } from '../common/pipes/uppercase.pipes';
+
 
 
 // RentalComponent is a container that will display its children component
@@ -31,9 +37,11 @@ const routes: Routes = [
     RentalComponent,
     RentalListComponent,
     RentalListItemComponent,
-    RentalDetailComponent
+    RentalDetailComponent,
+    UppercasePipe
+
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
-  providers: [RentalService]
+  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, NgPipesModule],
+  providers: [RentalService,]
 })
 export class RentalModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //Service
 import { RentalService } from '../shared/rental.service';
-import { Rental } from '../shared/rental.mode';
+import { Rental } from '../shared/rental.model';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // Get access to current Route
 import { ActivatedRoute } from '@angular/router';
-import { Rental } from '../shared/rental.mode';
+import { Rental } from '../shared/rental.model';
 import { RentalService } from '../shared/rental.service';
 
 
