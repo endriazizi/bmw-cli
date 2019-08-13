@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { MapComponent } from './map.component';
+import { AgmCoreModule } from '@agm/core';
+
+
+@NgModule({
+  //we must declare here all new components after we imported them!!!
+  declarations: [
+    MapComponent
+  ],
+  exports: [
+    MapComponent
+  ],
+  imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB7gio2U2msieGzUPhGem029HtNj3Rw5x8'
+    })
+
+  ],
+  providers: []
+})
+export class MapModule { }

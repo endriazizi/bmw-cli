@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 //Pipe
 import { NgPipesModule } from 'ngx-pipes';
 import { UppercasePipe } from '../common/pipes/uppercase.pipes';
+//Map
+import { MapModule } from '../common/map/map.module';
 
 
 
@@ -41,7 +43,7 @@ const routes: Routes = [
     UppercasePipe
 
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, NgPipesModule],
+  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, NgPipesModule, MapModule],
   providers: [RentalService,]
 })
 export class RentalModule { }
