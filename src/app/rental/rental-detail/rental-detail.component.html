@@ -1,13 +1,53 @@
-<div *ngIf="myRental">
-    <p>rental-detail works!</p>
+<section id="rentalDetails" *ngIf="myRental">
+    <div class="upper-section">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{myRental.image}}" alt="">
+    </div>
+                <div class="col-md-6">
+                    <!-- Will be replaced with map !!!! -->
+                    <img src="{{myRental.image}}" alt="">
+    </div>
+                </div>
+            </div>
 
-    <!-- <h1>{{currentId}}</h1> -->
-
-    <h1>{{myRental.id}}</h1>
-    <h1>{{myRental.title}}</h1>
-    <h1>{{myRental.city}}</h1>
-    <h1>{{myRental.street}}</h1>
-    <h1>{{myRental.category}}</h1>
-    <h1>{{myRental.description}}</h1>
-    <h1>{{myRental.dailyRate}}</h1>
-</div>
+            <div class="details-section">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="rental">
+                            <!-- Thernary Operation Example {{myRental.shared ? 'Shared' : 'Whole'}}-->
+                            <h2 class="rental-type {{myRental.category}}">{{myRental.shared ? 'Shared' : 'Whole'}} {{myRental.category}}</h2>
+                            <h1 class="rental-title">{{myRental.title}}</h1>
+                            <h2 class="rental-city">{{myRental.city | ucwords}}</h2>
+                            <div class="rental-room-info">
+                                <span><i class="fa fa-building"></i>{{myRental.bedrooms}} bedrooms</span>
+                                <span><i class="fa fa-user"></i> {{myRental.bedrooms + 4}} guests</span>
+                                <span><i class="fa fa-bed"></i> {{myRental.bedrooms + 2}} beds</span>
+                            </div>
+                            <p class="rental-description">
+                                <!-- Built in pipes : {{myRental.description | uppercase}} -->
+                                <!-- Custom Pipe -->
+                                {{myRental.description | upper}}
+                            </p>
+                            <hr>
+                            <div class="rental-assets">
+                                <h3 class="title">Assets</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span><i class="fa fa-asterisk"></i> Cooling</span>
+                                        <span><i class="fa fa-thermometer"></i> Heating</span>
+                                        <span><i class="fa fa-location-arrow"></i> Iron</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span><i class="fa fa-desktop"></i> Working area</span>
+                                        <span><i class="fa fa-cube"></i> Washing machine</span>
+                                        <span><i class="fa fa-cube"></i> Dishwasher</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4"> BOOKING</div>
+                </div>
+            </div>
+</section>

@@ -16,6 +16,7 @@ router.get('', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const rentalId = req.params.id;
+  console.log('ID : \n', rentalId)
   Rental.findById(rentalId, (err, foundRental) => {
     if (err) {
       res.status(422).send({
@@ -25,6 +26,7 @@ router.get('/:id', (req, res) => {
         }]
       });
     }
+    console.log('ID : \n', foundRental)
     res.json(foundRental);
   })
 })
