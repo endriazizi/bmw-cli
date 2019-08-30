@@ -1,4 +1,6 @@
 const Rental = require('../models/rental');
+const User = require('../models/user');
+
 
 class FakeDb {
   constructor() {
@@ -47,25 +49,48 @@ class FakeDb {
               bedrooms: 1,
               dailyRate: 84
             } */
-    ]
+    ];
+
+    this.users = [{
+      username: "Test User",
+      email: "test@gmail.com",
+      password: "testtest"
+    }]
   }
 
-  pushRentalsToDb() {
-    this.rentals.forEach((rental) => {
-      const newRental = new Rental(rental);
-      newRental.save();
-    })
-  }
+
+
 
   async cleanDb() {
     // https://mongoosejs.com/docs/deprecations.html
     // await Rental.remove({});
+    await User.deleteMany();
     await Rental.deleteMany();
   }
 
-  seeDb() {
-    this.cleanDb();
-    this.pushRentalsToDb();
+  pushDataToDb() {
+    const user = new User(this.users[0]);
+    this.rentals.forEach((rental) => {
+      const newRental = new Rental(rental);
+      newRental.user = user; // beacuse rental model has user id reference
+      // This Relationship means that these rentals belong to our user. "Test User" is owner.
+      user.rentals.push(newRental);
+      newRental.save();
+    });
+    user.save();
+  }
+
+
+
+  /*   seeDb() {
+      this.cleanDb();
+      this.pushDataToDb();
+    } */
+
+  // to sicnronize
+  async seeDb() {
+    await this.cleanDb();
+    this.pushDataToDb();
   }
 }
 module.exports = FakeDb;

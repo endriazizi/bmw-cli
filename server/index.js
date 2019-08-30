@@ -4,10 +4,15 @@
 const express = require('express');
 const config = require('./config/dev');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 const FakeDb = require('./models/fake-db')
 const rentalRoutes = require('./routes/rentals')
+const userRoutes = require('./routes/users')
+
 
 const app = express();
+
+app.use(bodyParser.json());
 
 
 // --------------------------------------------------------
@@ -20,6 +25,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
 
 //require('dotenv').config();
 // console.log(process.env);
