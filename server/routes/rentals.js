@@ -8,6 +8,15 @@ const Rental = require('../models/rental')
   });
 }) */
 
+
+const UserCtrl = require('../controllers/user');
+
+router.get('/secret', UserCtrl.authMiddleware, function(req, res) {
+  res.json({
+    "secret": true
+  });
+});
+
 router.get('', (req, res) => {
   Rental.find({}, (err, foundRentals) => {
     res.json(foundRentals);
@@ -22,13 +31,13 @@ router.get('/:id', (req, res) => {
       res.status(422).send({
         errors: [{
           title: 'Rental Error!',
-          detail: 'Could not finde Rental!'
+          detail: 'Could not find Rental!'
         }]
       });
     }
     console.log('ID : \n', foundRental)
     res.json(foundRental);
   })
-})
+});
 
 module.exports = router;

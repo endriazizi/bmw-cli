@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const rentalShema = new Schema({
+const rentalSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    max: [128, 'Too long, max is 128 characters']
   },
   city: {
     type: String,
@@ -41,7 +42,11 @@ const rentalShema = new Schema({
   bookings: [{
     type: Schema.Types.ObjectId,
     ref: 'Booking'
-  }]
+  }],
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
-module.exports = mongoose.model("Rental", rentalShema);
+module.exports = mongoose.model("Rental", rentalSchema);
