@@ -20,7 +20,8 @@ app.use(bodyParser.json());
 // --------------------------------------------------------
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
   next();
 });
 
@@ -49,7 +50,7 @@ mongoose.connect(config.DB_URI, {
   }).then(() => console.log('Connected to MongoDB...', config.DB_URI))
   .then(() => {
     const fakeDb = new FakeDb();
-    fakeDb.seeDb();
+    //  fakeDb.seeDb();
   })
   .catch(err => console.error('Could not connect to MongoDB...', err));
 
