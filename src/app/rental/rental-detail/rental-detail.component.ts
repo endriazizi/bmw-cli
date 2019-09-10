@@ -5,9 +5,6 @@ import { Rental } from '../shared/rental.model';
 import { RentalService } from '../shared/rental.service';
 
 
-
-
-
 @Component({
   selector: 'bwm-rental-detail',
   templateUrl: './rental-detail.component.html',
@@ -20,8 +17,7 @@ export class RentalDetailComponent implements OnInit {
 
   // Inject ActivatedRoute to our cunstructor
   // Inject Rental Service to our cunstructor
-  constructor(private route: ActivatedRoute,
-    private rentalService: RentalService) { }
+  constructor(private route: ActivatedRoute, private rentalService: RentalService) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -30,7 +26,7 @@ export class RentalDetailComponent implements OnInit {
         // getting rentalId from URL
         // this.currentId = params['rentalId'];
         this.getRental(params['rentalId'])
-      })
+      });
   }
 
   getRental(rentalId: string) {
@@ -38,7 +34,7 @@ export class RentalDetailComponent implements OnInit {
       (rental: Rental) => {
         this.myRental = rental;
       }
-    )
+    );
   }
 
 }
