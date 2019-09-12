@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const FakeDb = require('./models/fake-db')
 const rentalRoutes = require('./routes/rentals')
 const userRoutes = require('./routes/users')
+const bookingRoutes = require('./routes/booking');
 
 
 const app = express();
@@ -27,6 +28,7 @@ app.use(function(req, res, next) {
 
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/bookings', bookingRoutes);
 
 //require('dotenv').config();
 // console.log(process.env);
@@ -50,7 +52,7 @@ mongoose.connect(config.DB_URI, {
   }).then(() => console.log('Connected to MongoDB...', config.DB_URI))
   .then(() => {
     const fakeDb = new FakeDb();
-    //  fakeDb.seeDb();
+    // fakeDb.seeDb();
   })
   .catch(err => console.error('Could not connect to MongoDB...', err));
 

@@ -35,6 +35,8 @@ const rentalSchema = new Schema({
     type: Date,
     default: Date.now
   },
+
+  // External Keys
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -42,11 +44,7 @@ const rentalSchema = new Schema({
   bookings: [{
     type: Schema.Types.ObjectId,
     ref: 'Booking'
-  }],
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+  }]
 });
 
 module.exports = mongoose.model("Rental", rentalSchema);

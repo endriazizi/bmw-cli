@@ -81,3 +81,15 @@ https://angular.io/guide/component-interaction
 
 
 git commit -m "Adds logi and register component, adds authentication, adds guard and token interceptor"
+
+
+113 - SERVER SIDE BOOKINGS | Add Booking Model
+Understanding relations between models ***
+
+
+114 - SERVER SIDE BOOKINGS | Add Booking Controller
+
+115 - SERVER SIDE BOOKINGS | Add Booking Controller Implemetation
+
+116 - SERVER SIDE BOOKINGS | Validate Booking
+
