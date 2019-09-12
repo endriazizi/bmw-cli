@@ -78,3 +78,18 @@ npm install --save @types/jquery@3.2.12 jquery@3.2.1
 Share Component Data with Other Components
 https://levelup.gitconnected.com/angular-7-share-component-data-with-other-components-1b91d6f0b93f?gi=30dd3136c827
 https://angular.io/guide/component-interaction
+
+
+git commit -m "Adds logi and register component, adds authentication, adds guard and token interceptor"
+
+
+113 - SERVER SIDE BOOKINGS | Add Booking Model
+Understanding relations between models ***
+
+
+114 - SERVER SIDE BOOKINGS | Add Booking Controller
+
+115 - SERVER SIDE BOOKINGS | Add Booking Controller Implemetation
+
+116 - SERVER SIDE BOOKINGS | Validate Booking
+
