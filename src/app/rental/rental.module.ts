@@ -6,11 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Service
 import { RentalService } from './shared/rental.service';
+import { BookingService } from '../booking/shared/booking.service';
+
+import { HelperService } from '../common/service/helper.service';
+
 
 import { RentalComponent } from '../rental/rental.component';
 import { RentalListComponent } from '../rental/rental-list/rental-list.component';
 import { RentalListItemComponent } from '../rental/rental-list-item/rental-list-item.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
+import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+
 import { HttpClientModule } from '@angular/common/http';
 
 // Pipe
@@ -22,7 +28,12 @@ import { MapModule } from '../common/map/map.module';
 import { AuthGuard } from '../auth/shared/auth.guard';
 
 import { Daterangepicker } from 'ng2-daterangepicker';
-import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+
+// [ngModel]
+import { FormsModule } from '@angular/forms';
+
+
+
 
 
 
@@ -50,7 +61,7 @@ const routes: Routes = [
     RentalDetailBookingComponent
 
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, NgPipesModule, MapModule, Daterangepicker],
-  providers: [RentalService]
+  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, NgPipesModule, MapModule, Daterangepicker, FormsModule],
+  providers: [RentalService, HelperService, BookingService]
 })
 export class RentalModule { }

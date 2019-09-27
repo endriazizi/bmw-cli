@@ -1,3 +1,5 @@
+<p>rental-detail.component works!</p>
+
 <section id="rentalDetails" *ngIf="myRental">
     <div class="upper-section">
         <div class="row">
@@ -48,7 +50,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <bwm-rental-detail-booking [price]="myRental.dailyRate"></bwm-rental-detail-booking>
+                    <!-- <bwm-rental-detail-booking [price]="myRental.dailyRate" [myBookings]="myRental.bookings"> -->
+                    <!-- [rental] comes from @Input name variable of ts file -->
+                    <bwm-rental-detail-booking [ourRental]="myRental">
+
+                    </bwm-rental-detail-booking>
                 </div>
             </div>
         </div>

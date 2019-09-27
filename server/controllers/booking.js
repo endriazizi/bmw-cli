@@ -73,6 +73,7 @@ exports.createBooking = function(req, res) {
             }
           }, function() {});
           return res.json({
+            ciao: 'test',
             startAt: booking.startAt,
             endAt: booking.endAt
           });

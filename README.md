@@ -93,3 +93,84 @@ Understanding relations between models ***
 
 116 - SERVER SIDE BOOKINGS | Validate Booking
 
+117 - SERVER SIDE BOOKINGS | Booking Improvements
+
+117 - ANGULAR BOOKINGS | DISABLE ALREADY BOOKED DATES IN CALENDAR
+
+npm install --save @ng-bootstrap/ng-bootstrap
+
+
+127 - ANGULAR BOOKING - REQUEST TO CREATE BOOKING
+
+
+128 - ANGULAR BOOKING - UPDATE CALENDAR AND HANDLE ERRORS
+
+
+Toaster Package Angular 6
+Hello Guys
+
+In the next lecture we will use Toaster package that is not compatible with Angular 6. In order to avoid issues you need to use this package: https://www.npmjs.com/package/ngx-toastr
+
+npm install ngx-toastr --save
+
+angular.json adds
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/ngx-toastr/toastr.css"
+
+
+
+There are just small changes you need to do in next video:
+
+1. Import "node_modules/ngx-toastr/toastr.css" to styles field of angular.json
+
+2. To app.module.ts import { ToastrModule } from 'ngx-toastr';
+
+in imports array include this: ToastrModule.forRoot()
+
+3. in component where you want to use toaster you need to import { ToastrService } from 'ngx-toastr';
+
+and also inject to constructor, You don't need to use ContainerRef!
+
+Please watch next video and keep this changes in mind (:
+
+For more info check website of package and please watch last section video: Migration To Angular 6 where I am explaining what you need to fix in order to have your applications without issues. I am highly suggesting to watch it.
+
+Ok that's it , have a nice day and happy coding.
+
+131 - ANGULAR BOOKING - Reset Daterange Picker + ViewChild
+
+
+
+Filip — Instructor · 2 months ago
+Hello Akshit
+
+Are you using Angular 8 because i think it's related to newer version of Angular.
+
+Let's try this:
+
+1. remove forRoot from NgbModule.forRoot(),
+
+so leave only
+
+NgbModule in app.module.ts
+
+2. everywhere where we are using ViewChild decorator change syntax like this:
+
+@ViewChild(DaterangePickerComponent,{static: false})
+
+@ViewChild('cardCvc', {static: false}) cardCvcRef: ElementRef;
+
+You just need to add static option
+
+I will try to update course as soon as possible to Angular 8.
+
+Cheers.
+
+Filip
+
+
+132 - View encapsulation
+
