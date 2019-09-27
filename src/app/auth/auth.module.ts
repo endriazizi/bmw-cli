@@ -17,7 +17,10 @@ import { AuthService } from './shared/auth.service';
 
 // import { FormsModule } from '@angular/forms';
 // import { ReactiveFormsModule } from '@angular/forms';
+
+// [ngModel]
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AuthGuard } from './shared/auth.guard';
 import { TokenInterceptor } from './shared/token.interceptor';
 
