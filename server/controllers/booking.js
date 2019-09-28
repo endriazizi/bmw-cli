@@ -19,6 +19,7 @@ exports.createBooking = function(req, res) {
   } = req.body;
   // We are creating Booking just localy in memory we are not saving it DB yet
   const user = res.locals.user;
+  console.log('USER BOOKIN', user);
 
   const booking = new Booking({
     startAt,

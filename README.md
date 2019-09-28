@@ -174,3 +174,10 @@ Filip
 
 132 - View encapsulation
 
+
+TO STUDY!!!
+Passing variables through Express middleware  !!!
+
+https://www.google.com/search?sxsrf=ACYBGNQx61lfvN7l6tdktUSJBYm_D7SLSQ%3A1569612472505&ei=uGKOXei-HtK31fAP9bCuqAM&q=express+res.locals.user&oq=express+res.locals.user&gs_l=psy-ab.3...20381.20381..20540...0.0..0.0.0.......0....2j1..gws-wiz.PnOwU3Vp32g&ved=0ahUKEwjo-u6O3vHkAhXSWxUIHXWYCzUQ4dUDCAs&uact=5
+
+https://www.youtube.com/watch?v=zPYmM9K8-g8
