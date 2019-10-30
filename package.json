@@ -25,7 +25,7 @@
     "@types/jquery": "^3.2.12",
     "bootstrap": "^4.1.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
+    "jquery": "^3.4.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
     "ng2-daterangepicker": "^2.0.12",
